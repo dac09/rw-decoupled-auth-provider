@@ -1,0 +1,33 @@
+{
+  // "references": [
+  //   { "path": "./web" },
+  //   { "path": "./api" },
+  //   { "path": "./cli" },
+  // ],
+  "files": [],
+	"compilerOptions": {
+    "target": "ES5",
+    "moduleResolution": "Node16",
+    "module": "esnext",
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "sourceMap": true,
+    "composite": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "jsx": "preserve",
+    "skipLibCheck": true,
+    "resolveJsonModule": true
+  },
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/__tests__",
+    "**/__mocks__",
+    "**/*.test.*"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@redwoodjs/auth-auth0-web",
+  "version": "0.0.1",
+  "description": "Auth0 web side stuff",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^6.2.2"
+  },
+  "scripts": {
+    "build": "yarn tsup"
+  }
+}
