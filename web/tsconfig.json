@@ -1,8 +1,12 @@
 {
 	"compilerOptions": {
-		"target": "ES5",
+		"target": "ES2015", // we can set whatever target we want here, if we specify the env in .swcrc
 		"moduleResolution": "Node16",
 		"module": "esnext",
+		"lib": [
+			"esnext",
+			"DOM"
+		],
 		"declarationMap": true,
 		"emitDeclarationOnly": true,
 		"sourceMap": true,

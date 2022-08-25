@@ -5,6 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "browserslist": "^4.21.3",
     "tsup": "^6.2.2"
   },
   "scripts": {

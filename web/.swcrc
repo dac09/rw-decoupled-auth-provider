@@ -1,0 +1,7 @@
+{
+	"$schema": "https://json.schemastore.org/swcrc",
+	"env": {
+		"targets": "defaults, not IE 11, not IE_Mob 11"
+	},
+	"minify": true
+}

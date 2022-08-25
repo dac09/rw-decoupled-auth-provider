@@ -12,6 +12,7 @@
   "packageManager": "yarn@3.2.3",
   "devDependencies": {
     "@nrwl/nx-cloud": "14.3.0",
+    "@swc/core": "^1.2.242",
     "dotenv": "^16.0.1",
     "lerna": "5.4.3",
     "nx": "14.5.8",
