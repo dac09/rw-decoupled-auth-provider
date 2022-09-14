@@ -1,7 +1,26 @@
 {
-	"$schema": "https://json.schemastore.org/swcrc",
-	"env": {
-		"targets": "defaults, not IE 11, not IE_Mob 11"
-	},
-	"minify": true
+  "$schema": "https://json.schemastore.org/swcrc",
+  "env": {
+    "targets": "defaults, not IE 11, not IE_Mob 11"
+  },
+  "minify": true,
+  "jsc": {
+    "parser": {
+      "syntax": "typescript", // <-- I think this was important to get it working with jest
+      "tsx": true,
+      "dynamicImport": false
+    },
+    "transform": {
+      "react": {
+        "pragma": "React.createElement",
+        "pragmaFrag": "React.Fragment",
+        "throwIfNamespace": false,
+        "development": false,
+        "useBuiltins": true
+      },
+      "hidden": {
+        "jest": true
+      }
+    }
+  }
 }

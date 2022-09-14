@@ -18,5 +18,28 @@
     "nx": "14.5.8",
     "tsup": "^6.2.2",
     "typescript": "4.7.4"
+  },
+  "resolutions": {
+    "@redwoodjs/api": "portal:/Users/dac09/Code/redwood/packages/api",
+    "@redwoodjs/api-server": "portal:/Users/dac09/Code/redwood/packages/api-server",
+    "@redwoodjs/auth-providers-api": "portal:/Users/dac09/Code/redwood/packages/auth-providers-api",
+    "@redwoodjs/auth-providers-setup": "portal:/Users/dac09/Code/redwood/packages/auth-providers-setup",
+    "@redwoodjs/auth-providers-web": "portal:/Users/dac09/Code/redwood/packages/auth-providers-web",
+    "@redwoodjs/cli": "portal:/Users/dac09/Code/redwood/packages/cli",
+    "@redwoodjs/cli-helpers": "portal:/Users/dac09/Code/redwood/packages/cli-helpers",
+    "@redwoodjs/codemods": "portal:/Users/dac09/Code/redwood/packages/codemods",
+    "@redwoodjs/core": "portal:/Users/dac09/Code/redwood/packages/core",
+    "create-redwood-app": "portal:/Users/dac09/Code/redwood/packages/create-redwood-app",
+    "@redwoodjs/eslint-config": "portal:/Users/dac09/Code/redwood/packages/eslint-config",
+    "@redwoodjs/forms": "portal:/Users/dac09/Code/redwood/packages/forms",
+    "@redwoodjs/graphql-server": "portal:/Users/dac09/Code/redwood/packages/graphql-server",
+    "@redwoodjs/internal": "portal:/Users/dac09/Code/redwood/packages/internal",
+    "@redwoodjs/prerender": "portal:/Users/dac09/Code/redwood/packages/prerender",
+    "@redwoodjs/record": "portal:/Users/dac09/Code/redwood/packages/record",
+    "@redwoodjs/router": "portal:/Users/dac09/Code/redwood/packages/router",
+    "@redwoodjs/structure": "portal:/Users/dac09/Code/redwood/packages/structure",
+    "@redwoodjs/telemetry": "portal:/Users/dac09/Code/redwood/packages/telemetry",
+    "@redwoodjs/testing": "portal:/Users/dac09/Code/redwood/packages/testing",
+    "@redwoodjs/web": "portal:/Users/dac09/Code/redwood/packages/web"
   }
 }

@@ -17,3 +17,6 @@ yarn-error.log
 *.code-workspace
 .nova
 **/dist/*
+**/.yalc/*
+**/yalc.lock
+

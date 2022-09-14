@@ -1,29 +1,58 @@
-const Bazinga = {
-  name: window?.location.hostname ?? 'Bazinga',
-  urlSearchParams: new URLSearchParams({ foo: 'bar' }), // not supported by ie11
-  mySymbol: Symbol('mySymbol'),
-  repeatedString: 'repeatedString'.repeat(10),
-  myMap: new Map(),
-  spreadArray: [...[1, 2, 3]],
-};
+import type {
+  Auth0Client,
+  LogoutOptions,
+  RedirectLoginOptions,
+} from '@auth0/auth0-spa-js';
 
-Promise.any([Promise.resolve(1), Promise.reject(2), Promise.resolve(3)]).then(
-  console.log
-);
-Promise.any([Promise.reject(1), Promise.reject(2), Promise.reject(3)]).catch(
-  ({ errors }) => console.log(errors)
-);
+import { CurrentUser, createAuthentication } from '@redwoodjs/auth';
 
-for (let [_, d, D] of '1111a2b3cccc'.matchAll(/(\d)(\D)/g)) {
-  console.log(d, D);
+// TODO: Map out this user properly.
+export interface Auth0User {}
+
+export function createAuth0Auth(
+  auth0Client: Auth0Client,
+  customProviderHooks?: {
+    useCurrentUser?: () => Promise<Record<string, unknown>>;
+    useHasRole?: (
+      currentUser: CurrentUser | null
+    ) => (rolesToCheck: string | string[]) => boolean;
+  }
+) {
+  const authImplementation = createAuth0AuthImplementation(auth0Client);
+
+  return createAuthentication(authImplementation, customProviderHooks);
 }
 
-const array1 = ['a', 'b', 'c'];
-
-for (const element of array1) {
-  console.log(element);
+function createAuth0AuthImplementation(auth0Client: Auth0Client) {
+  return {
+    type: 'auth0',
+    client: auth0Client,
+    restoreAuthState: async () => {
+      if (
+        globalThis?.location?.search?.includes('code=') &&
+        globalThis?.location?.search?.includes('state=')
+      ) {
+        const { appState } = await auth0Client.handleRedirectCallback();
+        const url =
+          appState && appState.targetUrl
+            ? appState.targetUrl
+            : window.location.pathname;
+        globalThis?.location?.assign(url);
+      }
+    },
+    login: async (options?: RedirectLoginOptions) =>
+      auth0Client.loginWithRedirect(options),
+    logout: async (options?: LogoutOptions) => auth0Client.logout(options),
+    signup: async (options?: RedirectLoginOptions) =>
+      auth0Client.loginWithRedirect({
+        ...options,
+        screen_hint: 'signup',
+        prompt: 'login',
+      }),
+    getToken: () => auth0Client.getTokenSilently(),
+    getUserMetadata: async () => {
+      const user = await auth0Client.getUser();
+      return user || null;
+    },
+  };
 }
-
-
-
-export default Bazinga
