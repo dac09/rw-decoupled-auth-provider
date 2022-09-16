@@ -6,7 +6,7 @@
   "minify": true,
   "jsc": {
     "parser": {
-      "syntax": "typescript", // <-- I think this was important to get it working with jest
+			"syntax": "typescript",
       "tsx": true,
       "dynamicImport": false
     },

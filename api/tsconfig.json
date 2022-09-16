@@ -4,10 +4,6 @@
 		"target": "ESNext", // it seems SWC will handle it based on the target in .swcrc
 		"moduleResolution": "Node16",
 		"module": "esnext",
-		"lib": [
-			"esnext",
-			"DOM"
-		],
 		"declarationMap": true,
 		"emitDeclarationOnly": true,
 		"sourceMap": true,
@@ -17,7 +13,6 @@
 		"noUnusedParameters": true,
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
-		"jsx": "preserve",
 		"skipLibCheck": true,
 		"resolveJsonModule": true
 	},

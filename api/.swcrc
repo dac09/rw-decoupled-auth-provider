@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json.schemastore.org/swcrc",
+	"minify": true,
+	"jsc": {
+		"parser": {
+			"syntax": "typescript",
+			"tsx": false,
+			"dynamicImport": false
+		},
+		"transform": {
+			"hidden": {
+				"jest": true
+			}
+		}
+	}
+}
